@@ -12,10 +12,10 @@ import numpy as np
 import pandas as pd
 
 
-class InputFrame(Frame): # 继承Frame类  
+class InputFrame(Frame): 
     def __init__(self, master=None):  
         Frame.__init__(self, master)  
-        self.root = master #定义内部变量root  
+        self.root = master 
         self.E1 = Entry(self)
         self.E2 = Entry(self)
         self.E3 = Entry(self)
@@ -69,27 +69,27 @@ class InputFrame(Frame): # 继承Frame类
         
     def createPage(self):  
         Label(self).grid(row=0, stick=W, pady=10)
-        a = '#E0FFFF'
+        a = '#fafaf9'
         ft = tkFont.Font(family='Fixdsys', size=12, weight=tkFont.BOLD)
-        self.page = Frame(self.root,bg='#E0FFFF')
+        self.page = Frame(self.root,bg='#fafaf9')
         self.page.pack(expand=YES,fill=BOTH)
-        Label(self, text = 'name: ',font=ft,bg=a).grid(row=1, stick=W, pady=10)
+        Label(self, text = 'name: ',font=ft,bg=a).grid(row=1, stick=W, pady=5)
         self.E1.grid(row=1, column=1, stick=E)
 
-        Label(self, text = 'ID: ',font=ft,bg=a).grid(row=2, stick=W, pady=10)
+        Label(self, text = 'Number: ',font=ft,bg=a).grid(row=2, stick=W, pady=5)
         self.E2.grid(row=2, column=1, stick=E)
 
-        Label(self, text = 'subjects: ',font=ft,bg=a).grid(row=3, stick=W, pady=10) 
+        Label(self, text = 'subjects: ',font=ft,bg=a).grid(row=3, stick=W, pady=5) 
         self.E3.grid(row=3, column=1, stick=E) 
 
-        Label(self, text = 'grades: ',font=ft,bg=a).grid(row=4, stick=W, pady=10)
+        Label(self, text = 'grades: ',font=ft,bg=a).grid(row=4, stick=W, pady=5)
         self.E4.grid(row=4, column=1, stick=E)       
         
         Button(self, text='Input',command=self.click,font=ft,bg=a).grid(row=6, column=1, stick=E, pady=10)    
-class DeleteFrame(Frame): # 继承Frame类  
+class DeleteFrame(Frame):  
     def __init__(self, master=None):  
         Frame.__init__(self, master)  
-        self.root = master #定义内部变量root
+        self.root = master 
         self.E1 = Entry(self)
         self.E2 = Entry(self)
         self.createPage()
@@ -132,19 +132,19 @@ class DeleteFrame(Frame): # 继承Frame类
             self.delete(num,course)
             
     def createPage(self):
-        a = '#E0FFFF'
+        a = '#fafaf9'
         ft = tkFont.Font(family='Fixdsys', size=12, weight=tkFont.BOLD) 
-        self.page = Frame(self.root,bg='#E0FFFF')
+        self.page = Frame(self.root,bg='#fafaf9')
         Label(self).grid(row=0, stick=W, pady=10)     
         Label(self, text = 'Student ID: ',font=ft,bg=a).grid(row=1, stick=W, pady=10)
         self.E1.grid(row=1, column=1, stick=E)
         Label(self, text = 'subjects: ',font=ft,bg=a).grid(row=2, stick=W, pady=10)
         self.E2.grid(row=2, column=1, stick=E)
         Button(self, text='Delete',command=self.click,font=ft,bg=a).grid(row=6, column=1, stick=E, pady=10)   
-class ModifyFrame(Frame): # 继承Frame类  
+class ModifyFrame(Frame):  
     def __init__(self, master=None):  
         Frame.__init__(self, master)  
-        self.root = master #定义内部变量root  
+        self.root = master 
         self.E1 = Entry(self)
         self.E2 = Entry(self)
         self.E3 = Entry(self)
@@ -195,7 +195,7 @@ class ModifyFrame(Frame): # 继承Frame类
 
      
     def createPage(self):  
-        a = '#E0FFFF'
+        a = '#fafaf9'
         ft = tkFont.Font(family='Fixdsys', size=12, weight=tkFont.BOLD)        
         Label(self).grid(row=0, stick=W, pady=10)
         Label(self, text = 'name: ',font=ft,bg=a).grid(row=1, stick=W, pady=10)
@@ -206,11 +206,11 @@ class ModifyFrame(Frame): # 继承Frame类
         self.E3.grid(row=3, column=1, stick=E) 
         Label(self, text = 'grades: ',font=ft,bg=a).grid(row=4, stick=W, pady=10)
         self.E4.grid(row=4, column=1, stick=E)    
-        Button(self, text='Glaides',font=ft,bg=a,command=self.click).grid(row=6, column=1, stick=E, pady=10)  
-class QueryFrame(Frame): # 继承Frame类  
+        Button(self, text='Change',font=ft,bg=a,command=self.click).grid(row=6, column=1, stick=E, pady=10)  
+class QueryFrame(Frame):  
     def __init__(self, master=None):  
         Frame.__init__(self, master)  
-        self.root = master #定义内部变量root
+        self.root = master 
         self.E1 = Entry(self)
         self.E2 = Entry(self)
         self.createPage()  
@@ -252,7 +252,7 @@ class QueryFrame(Frame): # 继承Frame类
             
     def createPage(self):
         Label(self).grid(row=0, stick=W, pady=10)
-        a = '#E0FFFF'
+        a = '#fafaf9'
         ft = tkFont.Font(family='Fixdsys', size=12, weight=tkFont.BOLD)         
         Label(self, text = 'Student ID: ',font=ft,bg=a).grid(row=1, stick=W, pady=10)
         self.E1.grid(row=1, column=1, stick=E)
@@ -261,10 +261,10 @@ class QueryFrame(Frame): # 继承Frame类
         self.E2.grid(row=2, column=1, stick=E)
 
         Button(self, text='Find',command=self.click,font=ft,bg=a).grid(row=6, column=1, stick=E, pady=10)  
-class SortFrame(Frame): # 继承Frame类  
+class SortFrame(Frame): 
     def __init__(self, master=None):  
         Frame.__init__(self, master)  
-        self.root = master #定义内部变量root
+        self.root = master 
         self.E1 = Entry(self)
        # self.E2 = Entry(self)
         self.createPage()  
@@ -284,7 +284,7 @@ class SortFrame(Frame): # 继承Frame类
     def sort(self,course):
         dr = pd.read_csv('Grade.csv')
         math = (dr['Subject']==course)
-        ex = dr[math].sort_values(by='Grade')
+        ex = dr[math].sort_values(by='Grade', ascending=False)
         root = tkinter.Tk(className=" Transcripts ")
         textPad = ScrolledText(root, width=50, height=50)
         textPad.insert(tkinter.constants.END, chars = str(ex))
@@ -300,16 +300,16 @@ class SortFrame(Frame): # 继承Frame类
             
             
     def createPage(self):
-        a = '#E0FFFF'
+        a = '#fafaf9'
         ft = tkFont.Font(family='Fixdsys', size=12, weight=tkFont.BOLD)
         Label(self).grid(row=0, stick=W, pady=10)
         Label(self, text = 'subjects: ',font=ft,bg=a).grid(row=1, stick=W, pady=10)
         self.E1.grid(row=1, column=1, stick=E)
         Button(self, text='Find',command=self.click,font=ft,bg=a).grid(row=5, column=1, stick=E, pady=10) 
-class AnalysisFrame(Frame): # 继承Frame类  
+class AnalysisFrame(Frame):
     def __init__(self, master=None):  
         Frame.__init__(self, master)  
-        self.root = master #定义内部变量root
+        self.root = master
         self.E1 = Entry(self)
        # self.E2 = Entry(self)
         self.createPage()  
@@ -324,6 +324,52 @@ class AnalysisFrame(Frame): # 继承Frame类
             return 0
         else:
             return 1
+        
+    def analyze(self, course):
+        dr = pd.read_csv('Grade.csv')
+        math = (dr['Subject'] == course)
+        ex = dr[math].sort_values(by='Grade')
+        
+        # Calculate the average grade
+        average_grade = ex['Grade'].mean()
+
+        # Display pie chart
+        labels = ['Good', 'Normal', 'Again']
+        values = [len(ex[ex['Grade'] >= 90]), len(ex[(ex['Grade'] >= 60) & (ex['Grade'] < 90)]), len(ex[ex['Grade'] < 60])]
+        colors = ['#00FA9A', '#AFEEEE', 'c']
+        explode = [0, 0, 0]
+        
+        plt.figure(figsize=(8, 8))
+        
+        # Pie chart
+        plt.subplot(2, 1, 1)
+        plt.pie(values, labels=labels, explode=explode, colors=colors,
+                startangle=180, shadow=False, autopct='%1.1f%%')
+        plt.title("Grade Distribution")
+
+        # Bar chart for average grade
+        plt.subplot(2, 1, 2)
+        plt.bar(['Average Grade'], [average_grade], color='orange')
+        plt.title("Average Grade: {:.2f}".format(average_grade))
+
+        plt.tight_layout()
+        plt.show()
+
+    def click(self):
+        course = self.E1.get()
+        if self.Isspace(course):
+            messagebox.showinfo(title='prompt', message="The input is empty")
+        else:
+            self.analyze(course)  
+
+    def createPage(self):
+        Label(self).grid(row=0, stick=W, pady=10)
+        a = '#fafaf9'
+        ft = tkFont.Font(family='Fixdsys', size=12, weight=tkFont.BOLD)        
+        Label(self, text='subjects: ', font=ft, bg=a).grid(row=1, stick=W, pady=10)
+        self.E1.grid(row=1, column=1, stick=E)
+
+        Button(self, text='Analyze', command=self.click, font=ft, bg=a).grid(row=5, column=1, stick=E, pady=5)
     def sort(self,course):
         dr = pd.read_csv('Grade.csv')
         math = (dr['Subject']==course)
@@ -332,7 +378,7 @@ class AnalysisFrame(Frame): # 继承Frame类
         good = 0
         normal = 0
         again = 0
-        for devise in ex['Grade']:  # 从XB列读取数据
+        for devise in ex['Grade']: 
             if devise >= 90:
                 good += 1
             elif (devise >= 60 and devise < 90):
@@ -343,7 +389,7 @@ class AnalysisFrame(Frame): # 继承Frame类
         values = [good, normal, again]
         colors = ['#00FA9A', '#AFEEEE', 'c']
         explode = [0, 0, 0]
-        plt.title("This is Grade-Analysis", fontsize=25)
+        plt.title("This is Grade Analysis", fontsize=25)
         plt.pie(values, labels=labels, explode=explode, colors=colors,
         startangle=180,shadow=False, autopct='%1.1f%%')
         plt.axis('equal')
@@ -357,16 +403,16 @@ class AnalysisFrame(Frame): # 继承Frame类
             self.sort(course)  
     def createPage(self):
         Label(self).grid(row=0, stick=W, pady=10)
-        a = '#E0FFFF'
+        a = '#fafaf9'
         ft = tkFont.Font(family='Fixdsys', size=12, weight=tkFont.BOLD)        
         Label(self, text = 'subjects: ',font=ft,bg=a).grid(row=1, stick=W, pady=10)
         self.E1.grid(row=1, column=1, stick=E)
 
         Button(self, text='Find',command=self.click,font=ft,bg=a).grid(row=5, column=1, stick=E, pady=10) 
-class CheckFrame(Frame): # 继承Frame类  
+class CheckFrame(Frame): 
     def __init__(self, master=None):  
         Frame.__init__(self, master)  
-        self.root = master #定义内部变量root
+        self.root = master 
         self.E1 = Entry(self)
        # self.E2 = Entry(self)
         self.createPage()  
@@ -399,7 +445,7 @@ class CheckFrame(Frame): # 继承Frame类
         else:
             self.check(name)    
     def createPage(self):
-        a = '#E0FFFF'
+        a = '#fafaf9'
         ft = tkFont.Font(family='Fixdsys', size=12, weight=tkFont.BOLD)  
         Label(self).grid(row=0, stick=W, pady=10)
         Label(self, text = 'name: ',font=ft,bg=a).grid(row=1, stick=W, pady=10)

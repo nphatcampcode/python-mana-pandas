@@ -4,7 +4,7 @@ from view import *  # Corresponding subpages for the menu bar
 class MainPage(object):
     def __init__(self, master=None):
         self.root = master  # Define the internal variable 'root'
-        self.root.geometry('%dx%d' % (350, 500))  # Set window size
+        self.root.geometry('%dx%d' % (350, 350))  # Set window size
         self.createPage()
 
     def createPage(self):
@@ -21,10 +21,10 @@ class MainPage(object):
         menubar.add_command(label='Add Information', command=self.inputData)
         menubar.add_command(label='Delete Information', command=self.deleteData)
         menubar.add_command(label='Modify Information', command=self.modifyData)
-        menubar.add_command(label='Search by Subject', command=self.queryData)
+       # menubar.add_command(label='Search by Subject', command=self.queryData)
         menubar.add_command(label='Grade Ranking', command=self.sortData)
         menubar.add_command(label='Grade Analysis', command=self.analysisData)
-        menubar.add_command(label='Search for Students', command=self.checkData)
+       # menubar.add_command(label='Search for Students', command=self.checkData)
         self.root['menu'] = menubar  # Set the menu bar
 
     def inputData(self):

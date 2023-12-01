@@ -6,24 +6,24 @@ import tkinter.font as tkFont
 class LoginPage(object):
     def __init__(self, master=None):
         self.root = master  # Define the internal variable 'root'
-        self.root.geometry('%dx%d' % (304, 400))  # Set window size
+        self.root.geometry('%dx%d' % (320, 300))  # Set window size
         self.username = StringVar()
         self.password = StringVar()
         self.createPage()
 
     def createPage(self):
-        a = '#AFEEEE'
+        a = '#FAFAF9'
         ft = tkFont.Font(family='Helvetica', size=12, weight=tkFont.BOLD)
-        self.page = Frame(self.root, bg='#E0FFFF')  # Create a Frame
+        self.page = Frame(self.root, bg='white')  # Create a Frame
         self.page.pack(expand=YES, fill=BOTH)
         Label(self.page).grid(row=0, stick=W)
-        Label(self.page, text='Username: ', font=ft, bg=a).grid(row=1, stick=N, pady=5)
+        Label(self.page, text='User: ', font=ft, bg=a).grid(row=1, stick=N, pady=5)
         Entry(self.page, textvariable=self.username, width=25).grid(row=1, column=1, stick=E)
         Label(self.page, text='Password: ', font=ft, bg=a).grid(row=2, stick=N, pady=10)
         Entry(self.page, textvariable=self.password, show='*', width=25).grid(row=2, column=1, stick=E)
         Button(self.page, text='Login', command=self.loginCheck, font=ft, bg=a).grid(row=3, column=0, pady=5)
-        Button(self.page, text='Register', command=self.register, font=ft, bg=a).grid(row=3, column=1, pady=5)
-        Button(self.page, text='Quit', command=self.page.quit, font=ft, bg=a).grid(row=3, column=2, pady=5)
+        Button(self.page, text='SignUp', command=self.register, font=ft, bg=a).grid(row=3, column=1, pady=5)
+        Button(self.page, text='Cancel', command=self.page.quit, font=ft, bg=a).grid(row=3, column=2, pady=5)
 
     def loginCheck(self):
         name = self.username.get()
@@ -85,4 +85,4 @@ class LoginPage(object):
         f = open('Password.csv', 'a', encoding='utf-8')
         f.write('{},{}\n'.format(name, password))
         f.close()
-        messagebox.showinfo(title='Prompt', message="Registration successful")
+        messagebox.showinfo(title='Prompt', message="SignUp successful")
